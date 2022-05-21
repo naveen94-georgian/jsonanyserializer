@@ -27,6 +27,10 @@ class UserTest {
     User expectedUser = mapper.readValue(jsonOne, User.class);
 
     String jsonTwo = mapper.writeValueAsString(expectedUser);
+    System.out.println(jsonTwo);
+
+    // jsonTwo:
+    // {"userObjectID":"sdgshgdfh","team":{"id":5456,"teamName":"team_one","userList":null,"location":"germany"},"consent":true,"createdOn":null,"lastActive":null,"activity":{"activityId":1,"activittyType":"Running"},"city":"halifax","name":"naveen"}
 
     User actualUser = mapper.readValue(jsonTwo, User.class);
     // Not asserting whether the jsonOne and jsonTwo are equal, as the order of the attributes is
